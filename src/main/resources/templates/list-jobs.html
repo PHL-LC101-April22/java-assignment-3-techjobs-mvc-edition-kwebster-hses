@@ -9,10 +9,44 @@
 <div class="container body-content">
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    Pinocchio
+
+    <p> Boom alacaca</p>
+
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 
 </div>
+
+<div>
+    <!-- jobs is being pulled from listcontroller ; where the job object is imported into the model -->
+    <table th:each = "e : ${jobs}" class="job-listing">
+        <tr>
+            <td>ID</td>
+            <td th:text="${e.id}"> </td>
+        </tr>
+       <tr>
+           <td>Name</td>
+            <td th:text="${e.name}"> </td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${e.employer}"> </td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td th:text="${e.positionType}"> </td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${e.coreCompetency}"> </td>
+        </tr>
+
+
+    </table>
+
+</div>
+
 
 </body>
 </html>
